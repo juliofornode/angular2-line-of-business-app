@@ -1,13 +1,22 @@
 import { Component } from 'angular2/core';
+import { IProduct } from './product';
 
 @Component({
     selector: 'pm-products',
-    templateUrl: '/app/products/product-list.component.html'
+    templateUrl: 'app/products/product-list.component.html',
+    styleUrls: ['app/products/product-list.component.css']
 })
 
 export class ProductListComponent {
-    pageTitle: string = 'Product List',
-    products: any[] = [
+    pageTitle: string = 'Product List';
+    imageWidth: number = 50;
+    imageMargin: number = 10;
+    displayImg: boolean = true;
+    productFilter: string = 'color';
+    toggleImg(): void {
+        this.displayImg = !this.displayImg;
+    };
+    products: IProduct[] = [
         {
             "productId": 1,
             "productName": "Leaf Rake",
@@ -28,5 +37,5 @@ export class ProductListComponent {
             "starRating": 4.2,
             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
         }
-    ]
+    ];
 }

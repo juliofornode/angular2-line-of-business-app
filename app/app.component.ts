@@ -6,7 +6,7 @@ import { ProductListComponent } from './products/product-list.component';
     template: `
     <h3>{{ pageTitle }}</h3>
     <pm-products></pm-products>
-    `
+    `,
     directives: [ProductListComponent]
 })
 
